@@ -11,10 +11,6 @@ export function Input({
   placeholder,
   invalid,
 }: InputProps) {
-  const className = `w-full rounded-md border px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 ${
-    invalid ? "border-red-500" : "border-gray-300"
-  }`;
-
   if (multiline) {
     return (
       <textarea
@@ -25,7 +21,9 @@ export function Input({
         placeholder={placeholder}
         aria-invalid={invalid}
         rows={6}
-        className={className}
+        className={`w-full rounded-sm border px-3 py-2 text-sm text-ink placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-ink/30 ${
+          invalid ? "border-stamp" : "border-rule"
+        }`}
       />
     );
   }
@@ -38,7 +36,9 @@ export function Input({
       onChange={(e) => onChange(e.target.value)}
       placeholder={placeholder}
       aria-invalid={invalid}
-      className={className}
+      className={`w-full border-0 border-b bg-transparent px-0.5 py-2 text-sm text-ink placeholder:text-ink-muted focus:outline-none focus:border-ink ${
+        invalid ? "border-stamp" : "border-rule"
+      }`}
     />
   );
 }

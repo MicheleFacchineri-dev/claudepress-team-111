@@ -10,17 +10,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="it" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-slate-50 text-slate-900">
-        <header className="border-b border-slate-200 bg-white">
-          <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
-            <Link href="/" className="text-lg font-semibold tracking-tight">
+      <body className="min-h-full flex flex-col bg-paper text-ink font-body">
+        <header className="border-b border-rule">
+          <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-5">
+            <Link href="/" className="font-display text-xl tracking-tight text-ink">
               ClaudePress
             </Link>
-            <nav className="flex gap-5 text-sm text-slate-600">
-              <Link href="/" className="hover:text-slate-900">
+            <nav className="flex gap-6 text-sm text-ink-muted">
+              <Link href="/" className="hover:text-ink">
                 Blog
               </Link>
-              <Link href="/admin/posts" className="hover:text-slate-900">
+              <Link href="/admin/posts" className="hover:text-ink">
                 Backoffice
               </Link>
             </nav>
